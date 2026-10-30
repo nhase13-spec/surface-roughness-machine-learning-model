@@ -1,5 +1,7 @@
 # Surface Roughness Machine Learning Model
 
+GitHub: [nhase13-spec/surface-roughness-machine-learning-model](https://github.com/nhase13-spec/surface-roughness-machine-learning-model)
+
 Predict **CNC surface roughness (Ra)** from **programmed feed and spindle settings** using a small public milling dataset.
 
 **Data:** [Zenodo 21518387](https://zenodo.org/records/21518387) (CC BY 4.0) — this repo includes only the two summary CSVs needed for training (see `data/raw/dataset/DATASET.txt`).
