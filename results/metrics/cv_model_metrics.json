@@ -1,0 +1,37 @@
+[
+  {
+    "MAE": 0.732731917594709,
+    "RMSE": 0.9151747351280763,
+    "R2": -0.1442046511600079,
+    "model": "dummy_mean",
+    "evaluation": "grouped_cv"
+  },
+  {
+    "MAE": 0.8254339108227746,
+    "RMSE": 1.0685385292235066,
+    "R2": -0.5598255773170981,
+    "model": "ridge",
+    "evaluation": "grouped_cv"
+  },
+  {
+    "MAE": 0.8052223787521764,
+    "RMSE": 1.0286069878847288,
+    "R2": -0.4454218155641305,
+    "model": "random_forest",
+    "evaluation": "grouped_cv"
+  },
+  {
+    "MAE": 0.8452637830046018,
+    "RMSE": 1.189069294429195,
+    "R2": -0.9315679611674859,
+    "model": "xgboost",
+    "evaluation": "grouped_cv"
+  },
+  {
+    "MAE": 0.763813948784128,
+    "RMSE": 0.983249369924931,
+    "R2": -0.3207572945002768,
+    "model": "gaussian_process",
+    "evaluation": "grouped_cv"
+  }
+]

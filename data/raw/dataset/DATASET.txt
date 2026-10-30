@@ -1,0 +1,11 @@
+Surface roughness ML — minimal data bundle
+
+Included (CSV):
+  - gaussian_filtered_profile_summary.csv  (45 profilograms, labels + programmed F/S)
+  - straight_segment_index.csv           (15 segments, tool/material metadata)
+
+Full profiles, ZIP, and HTML viewer:
+  https://zenodo.org/records/21518387
+  DOI: 10.5281/zenodo.21518387  (CC BY 4.0)
+
+These two CSVs are enough to run: python run_pipeline.py

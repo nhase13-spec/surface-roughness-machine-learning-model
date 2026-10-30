@@ -1,0 +1,8 @@
+{
+  "available": false,
+  "planned_channels": [
+    "spindle_load",
+    "vibration_rms",
+    "acoustic_emission"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "n_profiles": 45,
+  "n_segments": 15,
+  "n_runs": 5,
+  "profiles_per_segment": {
+    "count": 15.0,
+    "mean": 3.0,
+    "std": 0.0,
+    "min": 3.0,
+    "25%": 3.0,
+    "50%": 3.0,
+    "75%": 3.0,
+    "max": 3.0
+  },
+  "target_column": "ra_gaussian_filtered_um",
+  "target_range_um": [
+    0.175314065,
+    3.396159762
+  ],
+  "missing_target": 0,
+  "duplicate_profile_keys": 0,
+  "in_process_sensor_signals": false
+}

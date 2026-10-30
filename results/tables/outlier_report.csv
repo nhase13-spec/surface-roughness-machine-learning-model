@@ -1,0 +1,14 @@
+column,n_outliers_z_gt_3,indices
+ra_gaussian_filtered_um,0,[]
+feed_min_mm_min,0,[]
+feed_max_mm_min,0,[]
+feed_mean_mm_min,0,[]
+feed_range_mm_min,0,[]
+spindle_min_rpm,3,"[30, 31, 32]"
+spindle_max_rpm,3,"[27, 28, 29]"
+spindle_mean_rpm,3,"[27, 28, 29]"
+spindle_range_rpm,3,"[27, 28, 29]"
+feed_per_tooth_mm,0,[]
+cutting_speed_m_min,3,"[27, 28, 29]"
+material_removal_rate_proxy,0,[]
+machining_order,0,[]

@@ -1,0 +1,27 @@
+project:
+  name: Surface Roughness Machine Learning Model
+  random_seed: 42
+
+data:
+  zenodo_record: "21518387"
+  doi: "10.5281/zenodo.21518387"
+  licence: "CC BY 4.0"
+  raw_extract_dir: "data/raw/dataset"
+  profile_summary: "gaussian_filtered_profile_summary.csv"
+  segment_index: "straight_segment_index.csv"
+  group_column: "segment_id"
+  target_column: "ra_gaussian_filtered_um"
+
+modeling:
+  cv_strategy: "leave_one_group_out"
+  test_holdout_groups: 3
+  use_predefined_hyperparameters: true
+
+paths:
+  interim: "data/interim"
+  processed: "data/processed"
+  figures: "results/figures"
+  tables: "results/tables"
+  metrics: "results/metrics"
+  models: "models"
+  reports: "reports"

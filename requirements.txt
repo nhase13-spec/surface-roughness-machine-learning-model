@@ -1,0 +1,14 @@
+# If pip fails with SSL errors:
+# pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+
+numpy>=2.0
+pandas>=2.2
+scipy>=1.11
+scikit-learn>=1.4
+xgboost>=2.0
+matplotlib>=3.8
+seaborn>=0.13
+PyYAML>=6.0
+pytest>=8.0
+joblib>=1.3
+shap>=0.44
