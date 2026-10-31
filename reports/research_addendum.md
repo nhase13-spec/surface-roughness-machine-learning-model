@@ -2,7 +2,8 @@
 
 Scope: reviewer-requested controlled experiments (correlation, engineering feature groups, gradual inclusion, PCA,
 grouped importance, residual diagnostics). All baseline experiments and result files are unchanged; everything new
-is written to new files (`extended_*` tables, `results/figures/14_…20_*.png`). Reproduce with `python run_extended.py`.
+is written to new files (`extended_*` tables, `results/figures/14_…20_*.png`). These generated files are not committed;
+reproduce them with `python run_extended.py`.
 
 **Status of every number below: exploratory and hypothesis-generating.** 45 profiles = 15 segments = 5 runs; the
 independent units are segments (LOSO, 15 folds) and runs (LORO, 5 folds). Variants, thresholds and PCA sizes were fixed

@@ -1,3 +1,0 @@
-validation,variant,reason
-LORO,pca3_process_numeric,k=3 > cap 2 (= n_train_units//2 with n_train_units=4)
-LORO,pca5_process_numeric,k=5 > cap 2 (= n_train_units//2 with n_train_units=4)
