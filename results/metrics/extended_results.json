@@ -1,0 +1,547 @@
+{
+  "n_boot": 2000,
+  "seed": 42,
+  "corr_threshold": 0.95,
+  "pca_ks": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "pca_cap_by_validation": {
+    "LOSO": 7,
+    "LORO": 2
+  },
+  "n_train_units_by_validation": {
+    "LOSO": 14,
+    "LORO": 4
+  },
+  "skipped_variants": [
+    {
+      "validation": "LORO",
+      "variant": "pca3_process_numeric",
+      "reason": "k=3 > cap 2 (= n_train_units//2 with n_train_units=4)"
+    },
+    {
+      "validation": "LORO",
+      "variant": "pca5_process_numeric",
+      "reason": "k=5 > cap 2 (= n_train_units//2 with n_train_units=4)"
+    }
+  ],
+  "reproduction_check": {
+    "max_abs_diff_vs_cv_model_metrics": 2.220446049250313e-16,
+    "reproduces_original": true
+  },
+  "stage5_identical_to_reference_full": true,
+  "grouped_shap_max_additivity_gap": 1.430511474609375e-06,
+  "correlation": {
+    "n_varying_numeric": 12,
+    "numeric_rank": 5,
+    "condition_number": null,
+    "zero_variance": [
+      "cutting_depth_mm",
+      "cutting_width_mm",
+      "tool_diameter_mm",
+      "tool_teeth"
+    ]
+  },
+  "pure_error": {
+    "spearman_sd_vs_mean": 0.42142857142857143,
+    "spearman_p": 0.11769939585541633,
+    "loglog_slope": 0.68385269554379,
+    "n_segments": 15,
+    "note": "slope ~ 1 means spread proportional to level (multiplicative noise); 3 profiles per segment give very noisy SDs"
+  },
+  "pca_effective_rank_by_fold": {
+    "min": 3,
+    "max": 4
+  },
+  "variants": {
+    "reference_full": {
+      "family": "reference",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "stage1_feed": {
+      "family": "cumulative",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min"
+      ],
+      "categorical": [
+        "programmed_feed_pattern"
+      ],
+      "pca_k": null
+    },
+    "stage2_spindle": {
+      "family": "cumulative",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm"
+      ],
+      "categorical": [
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "stage3_derived_physical": {
+      "family": "cumulative",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "stage4_process_constants": {
+      "family": "cumulative",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "stage5_design_metadata": {
+      "family": "cumulative",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "only_feed": {
+      "family": "single_group",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min"
+      ],
+      "categorical": [
+        "programmed_feed_pattern"
+      ],
+      "pca_k": null
+    },
+    "only_spindle": {
+      "family": "single_group",
+      "numeric": [
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm"
+      ],
+      "categorical": [
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "only_derived_physical": {
+      "family": "single_group",
+      "numeric": [
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [],
+      "pca_k": null
+    },
+    "only_process_constants": {
+      "family": "single_group",
+      "numeric": [
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth"
+      ],
+      "categorical": [],
+      "pca_k": null
+    },
+    "only_design_metadata": {
+      "family": "single_group",
+      "numeric": [
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id"
+      ],
+      "pca_k": null
+    },
+    "drop_feed": {
+      "family": "drop_group",
+      "numeric": [
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "drop_spindle": {
+      "family": "drop_group",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_feed_pattern"
+      ],
+      "pca_k": null
+    },
+    "drop_derived_physical": {
+      "family": "drop_group",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "drop_process_constants": {
+      "family": "drop_group",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "material_removal_rate_proxy",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "drop_design_metadata": {
+      "family": "drop_group",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "full_corrfilter0.95": {
+      "family": "correlation_filter",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    },
+    "pca1_process_numeric": {
+      "family": "pca",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [],
+      "pca_k": 1
+    },
+    "pca2_process_numeric": {
+      "family": "pca",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [],
+      "pca_k": 2
+    },
+    "pca3_process_numeric": {
+      "family": "pca",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [],
+      "pca_k": 3
+    },
+    "pca5_process_numeric": {
+      "family": "pca",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [],
+      "pca_k": 5
+    },
+    "process_numeric_no_pca": {
+      "family": "pca",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy"
+      ],
+      "categorical": [],
+      "pca_k": null
+    },
+    "full_log_target": {
+      "family": "target_transform",
+      "numeric": [
+        "feed_min_mm_min",
+        "feed_max_mm_min",
+        "feed_mean_mm_min",
+        "feed_range_mm_min",
+        "spindle_min_rpm",
+        "spindle_max_rpm",
+        "spindle_mean_rpm",
+        "spindle_range_rpm",
+        "feed_per_tooth_mm",
+        "cutting_speed_m_min",
+        "cutting_depth_mm",
+        "cutting_width_mm",
+        "tool_diameter_mm",
+        "tool_teeth",
+        "material_removal_rate_proxy",
+        "machining_order"
+      ],
+      "categorical": [
+        "geometry",
+        "cutting_direction_axis",
+        "run_id",
+        "programmed_feed_pattern",
+        "programmed_spindle_pattern"
+      ],
+      "pca_k": null
+    }
+  }
+}
